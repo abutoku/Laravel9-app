@@ -30,6 +30,12 @@ class CreateRequest extends FormRequest
         ];
     }
 
+    //Requestクラスのユーザー関数でログインしているユーザーを取得できる
+    public function userId(): int
+    {
+        return $this->user()->id;
+    }
+
     public function tweet(): string
     {
         //Requestクラスを継承しているため、$this→input()を利用して、リクエストからデータを取得できる

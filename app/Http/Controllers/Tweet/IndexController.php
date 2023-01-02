@@ -22,7 +22,7 @@ class IndexController extends Controller
         // $tweets = Tweet::orderBy('created_at','DESC')->get(); //ソートして全て取得
 
         //$tweetService = new TweetService(); //TweetServiceのインスタンスを作成
-        
+
         $tweets = $tweetService->getTweets();
         return view('tweet.index')->with('tweets',$tweets);
     }
