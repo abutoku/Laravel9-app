@@ -26,6 +26,9 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        //パスパラメータtweetIdを整数値で指定
+        Route::pattern('tweetId','[0-9]+');
+
         $this->configureRateLimiting();
 
         $this->routes(function () {
