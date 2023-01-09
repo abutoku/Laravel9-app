@@ -24,6 +24,11 @@ class IndexController extends Controller
         //$tweetService = new TweetService(); //TweetServiceのインスタンスを作成
 
         $tweets = $tweetService->getTweets();
+
+        //デバック用のコード
+        // dump($tweets);
+        // app(\App\Exceptions\Handler::class)->render(request(), throw new \Error('dump report.'));
+
         return view('tweet.index')->with('tweets',$tweets);
     }
 }
