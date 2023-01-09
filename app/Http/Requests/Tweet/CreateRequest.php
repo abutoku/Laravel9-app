@@ -26,8 +26,15 @@ class CreateRequest extends FormRequest
     {
         //リクエストされる値を検証するための設定
         return [
-            'tweet' => 'required|max:140'
+            'tweet' => 'required|max:140',
+            'images' => 'array|max:4',
+            'images.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ];
+    }
+
+    public function images(): array
+    {
+        return $this->file('images',[]);
     }
 
     //Requestクラスのユーザー関数でログインしているユーザーを取得できる
