@@ -9,7 +9,6 @@ use Mockery;
 class TweetServiceTest extends TestCase
 {
     /**
-     *
      * @runInSeparateProcess
      * @return void
      */
@@ -18,7 +17,7 @@ class TweetServiceTest extends TestCase
         $tweetService = new TweetService(); //TweetServiceのインスタンスを作成
 
         $mock = Mockery::mock('alias:App\Models\Tweet'); //Tweetモデルのモックオブジェクトを作成
-        
+
         //モックオブジェクトに対して「Tweet::where('id,$tweetId)->first();」が実行された場合の処理
         $mock->shouldReceive('where->first')->andReturn((object)[
             'id' => 1,
